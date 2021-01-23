@@ -2,6 +2,11 @@
 {
     public class XmlConvertResponse
     {
-        public string Xml { get; set; }
+        public string Xml { get; }
+
+        public XmlConvertResponse(string xmlConvertResult)
+        {
+            this.Xml = xmlConvertResult;
+        }
     }
 }
