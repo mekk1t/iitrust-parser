@@ -1,4 +1,4 @@
-﻿namespace IitrustParser
+﻿namespace WSP
 {
     public class ArticlePreview
     {
