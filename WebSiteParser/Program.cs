@@ -17,7 +17,7 @@ namespace IitrustParser
             {
                 var response = client.GetAsync($"{BASE_URL}/articles").Result;
 
-                IDocument document = response.Content.ReadAsStringAsync().Result.AsHTML();
+                IDocument document = response.Content.ReadAsStringAsync().Result.AsIDocument();
 
                 var elements = document.All;
 
