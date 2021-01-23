@@ -1,11 +1,12 @@
-﻿using WSP.Abstractions;
+﻿using System.Collections.Generic;
+using WSP.Abstractions;
 using WSP.Models;
 
 namespace WSP
 {
     public class IitrustRuArticlesParser : IWebSiteArticlesParser
     {
-        private readonly IPageParser<ArticlesParseResult> parser;
+        private readonly IPageParser<IEnumerable<ArticlesParseResult>> parser;
         private readonly IXmlConverter<XmlConvertRequest, XmlConvertResponse> converter;
         private readonly IResultSaver resultSaver;
 
