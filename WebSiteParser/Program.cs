@@ -9,7 +9,7 @@ namespace WSP
     class Program
     {
         private const string BASE_URL = "https://iitrust.ru";
-        public static List<ArticlePreview> ArticlePreviews { get; set; } = new List<ArticlePreview>();
+        public static List<Preview> ArticlePreviews { get; set; } = new List<Preview>();
 
         static void Main(string[] args)
         {
@@ -31,7 +31,7 @@ namespace WSP
 
                     var imageUrl = preview.QuerySelector(".iit-article__img");
 
-                    var articlePreview = new ArticlePreview
+                    var articlePreview = new Preview
                     {
                         Title = title.Text(),
                         DetailsUrl = link.GetAttribute("href"),
