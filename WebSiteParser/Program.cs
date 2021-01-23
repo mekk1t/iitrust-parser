@@ -1,10 +1,10 @@
 ﻿using AngleSharp.Dom;
-using IitrustParser.Extensions;
+using WSP.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 
-namespace IitrustParser
+namespace WSP
 {
     class Program
     {

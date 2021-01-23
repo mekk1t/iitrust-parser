@@ -1,7 +1,7 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
 
-namespace IitrustParser.Extensions
+namespace WSP.Extensions
 {
     public static class StringExtensions
     {
