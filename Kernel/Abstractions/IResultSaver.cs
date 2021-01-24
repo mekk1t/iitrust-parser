@@ -1,7 +1,7 @@
 ﻿namespace WSP.Abstractions
 {
-    public interface IResultSaver
+    public interface IResultSaver<TResult>
     {
-        void SaveResult(string result);
+        void SaveResult(TResult result);
     }
 }

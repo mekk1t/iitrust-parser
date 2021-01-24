@@ -9,12 +9,12 @@ namespace WSP
     {
         private readonly IPageParser<IEnumerable<IArticle>> parser;
         private readonly IXmlConverter<XmlConvertRequest, XmlConvertResponse> converter;
-        private readonly IResultSaver resultSaver;
+        private readonly IResultSaver<string> resultSaver;
 
         public IitrustRuArticlesParser(
             IPageParser<IEnumerable<IArticle>> parser,
             IXmlConverter<XmlConvertRequest, XmlConvertResponse> converter,
-            IResultSaver resultSaver)
+            IResultSaver<string> resultSaver)
         {
             this.parser = parser;
             this.converter = converter;
