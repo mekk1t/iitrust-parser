@@ -1,9 +1,11 @@
-﻿namespace WSP.Models
+﻿using Kernel.Abstractions;
+using System;
+
+namespace WSP.Models
 {
-    public class ArticlesParseResult
+    public class ArticlesParseResult : IArticle
     {
         private string placeholderImage;
-
         private readonly string imageBase64;
 
         public string Title { get; }
@@ -24,8 +26,9 @@
             }
         }
         public string Content { get; }
+        public DateTime PublishedOn { get; set; }
 
-        public ArticlesParseResult(string title, string url, string imageBase64, string content)
+        public ArticlesParseResult(string title, string url, string content, string imageBase64 = "")
         {
             this.Title = title;
             this.Url = url;
