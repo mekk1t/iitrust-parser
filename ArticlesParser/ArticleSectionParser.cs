@@ -1,9 +1,11 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
 using Kernel.Abstractions;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using WSP.Abstractions;
 
 namespace ArticlesParser
@@ -20,7 +22,7 @@ namespace ArticlesParser
         public IEnumerable<IArticle> GetPageContent(string pageUrl)
         {
             IDocument page;
-            var result = new List<IArticle>();
+            var result = new ConcurrentBag<IArticle>();
 
             using (var client = new HttpClient())
             {
@@ -38,10 +40,11 @@ namespace ArticlesParser
                 }
 
                 var links = GetArticleLinksFromPage(page).Select(l => pageUrl.Split("/article").First() + l);
-                foreach (var link in links)
+
+                Parallel.ForEach(links, link =>
                 {
                     result.Add(articlePageParser.GetPageContent(link));
-                }
+                });
             }
 
             return result;
