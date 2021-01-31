@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteParser", "WebSiteParser\WebSiteParser.csproj", "{623F0637-D4DC-4BBF-B21B-27F56868BE1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kernel", "Kernel\Kernel.csproj", "{E01AC103-E4B4-4B20-8C7C-937D9AD50A8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kernel", "Kernel\Kernel.csproj", "{E01AC103-E4B4-4B20-8C7C-937D9AD50A8E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Implementations", "Implementations\Implementations.csproj", "{13F8D5A8-6C98-4A64-871D-5AC32D470937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlConverter", "JsonToXmlConverter\JsonToXmlConverter.csproj", "{31F7F1CC-A63A-4DB6-9C67-1B721FF12895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{13F8D5A8-6C98-4A64-871D-5AC32D470937}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13F8D5A8-6C98-4A64-871D-5AC32D470937}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13F8D5A8-6C98-4A64-871D-5AC32D470937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F7F1CC-A63A-4DB6-9C67-1B721FF12895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F7F1CC-A63A-4DB6-9C67-1B721FF12895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F7F1CC-A63A-4DB6-9C67-1B721FF12895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F7F1CC-A63A-4DB6-9C67-1B721FF12895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
