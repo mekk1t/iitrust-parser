@@ -31,11 +31,17 @@ namespace ArticlesParser
             }
 
             var navigationLinks = GetNavigationLinksFromPage(page).Select(l => pageUrl.Split("/articles").First() + l);
-            foreach (var navigationLink in navigationLinks)
+
+            var lastLinkSplitBySlash = navigationLinks.Last().Split('/');
+            var lastLinkLastPart = navigationLinks.Last().Split('/').ElementAt(lastLinkSplitBySlash.Length - 2);
+            var lastNav = GetNumberFromString(lastLinkLastPart);
+
+            for (int i = 1; i <= lastNav; i++)
             {
+                var url = pageUrl + $"/p_{i}";
                 using (var client = new HttpClient())
                 {
-                    var response = client.GetStringAsync(pageUrl).Result;
+                    var response = client.GetStringAsync(url).Result;
                     page = BrowsingContext.New().OpenAsync(c => c.Content(response)).Result;
                 }
 
@@ -67,6 +73,15 @@ namespace ArticlesParser
                 .GetElementsByClassName("iit-pagination__link")
                 .Select(link => link.GetAttribute("href"))
                 .ToArray();
+        }
+
+        private int GetNumberFromString(string str)
+        {
+            var numbers = str.Where(c => int.TryParse(c.ToString(), out _)).ToArray();
+
+            var result = int.Parse(numbers);
+
+            return result;
         }
     }
 }
