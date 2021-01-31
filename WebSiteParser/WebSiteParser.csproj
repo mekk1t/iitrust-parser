@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Implementations\Implementations.csproj" />
     <ProjectReference Include="..\Kernel\Kernel.csproj" />
   </ItemGroup>
 
