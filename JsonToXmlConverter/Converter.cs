@@ -2,6 +2,8 @@
 using System.Xml.Linq;
 using WSP.Abstractions;
 using WSP.Models;
+using System.Collections.Generic;
+using Kernel.Abstractions;
 
 namespace JsonToXmlConverter
 {
@@ -9,8 +11,8 @@ namespace JsonToXmlConverter
     {
         public XmlConvertResponse ConvertToXml(XmlConvertRequest req)
         {
-            var convert = req.Data;
-            string jsonString = JsonConvert.SerializeObject(convert);
+            IEnumerable<IArticle> data = req.Data;
+            string jsonString = JsonConvert.SerializeObject(data);
 
             string result = ConvertJsonToXml(jsonString);
 
@@ -19,7 +21,7 @@ namespace JsonToXmlConverter
 
         private string ConvertJsonToXml(string jsonString)
         {
-            XNode node = JsonConvert.DeserializeXNode(jsonString, "Root");
+             XNode node = JsonConvert.DeserializeXNode(jsonString, "Root");
 
             return node.ToString();
         }
