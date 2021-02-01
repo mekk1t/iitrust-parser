@@ -12,6 +12,7 @@ namespace ArticlesParser
     {
         public IArticle GetPageContent(string pageUrl)
         {
+
             IDocument page;
             using (var client = new HttpClient())
             {
