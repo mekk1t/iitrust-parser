@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Threading.Tasks;
 using WSP.Abstractions;
 
 namespace Implementations
@@ -12,11 +8,12 @@ namespace Implementations
     {
         public void SaveResult(string result)
         {
-            var dir = Directory.GetCurrentDirectory();
-            var path = Directory.GetCurrentDirectory();
-            var targetDir = $"{path}/data";
-            var targetFile = $"{path}/data/file";
-            File.WriteAllText(targetFile, "Data");
+            var parentDir = Directory.GetParent(Directory.GetCurrentDirectory());
+            parentDir = Directory.GetParent(parentDir.ToString());
+            parentDir = Directory.GetParent(parentDir.ToString());
+            var targetDir = $"{parentDir}/data";
+            var targetFile = $"{targetDir}/file";
+            File.WriteAllText(targetFile, result);
         }
     }
 }
