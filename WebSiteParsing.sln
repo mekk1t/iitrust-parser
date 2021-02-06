@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteParser", "WebSitePar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kernel", "Kernel\Kernel.csproj", "{E01AC103-E4B4-4B20-8C7C-937D9AD50A8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Implementations", "Implementations\Implementations.csproj", "{13F8D5A8-6C98-4A64-871D-5AC32D470937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticlesParser", "ArticlesParser\ArticlesParser.csproj", "{85295D03-BE49-4D7A-B5AB-C0A5A8D288CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Articles_Parser", "Articles_Parser", "{F10DB50C-9A88-4501-9823-B7041BF34D02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlConverter", "JsonToXmlConverter\JsonToXmlConverter.csproj", "{31F7F1CC-A63A-4DB6-9C67-1B721FF12895}"
 EndProject
@@ -36,6 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85295D03-BE49-4D7A-B5AB-C0A5A8D288CE} = {F10DB50C-9A88-4501-9823-B7041BF34D02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {407D2BBB-6322-45FD-96AE-DAE972970FC2}
