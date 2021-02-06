@@ -1,13 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using WSP.Abstractions;
 
-namespace Implementations.IResultSaver
+namespace Implementations
 {
-    public class ResultSaver
+    public class ResultSaver: IResultSaver<string>
     {
-        
+        public void SaveResult(string result)
+        {
+            var parentDir = Directory.GetParent(Directory.GetCurrentDirectory());
+            parentDir = Directory.GetParent(parentDir.ToString());
+            parentDir = Directory.GetParent(parentDir.ToString());
+            var targetDir = $"{parentDir}/data";
+            var targetFile = $"{targetDir}/file";
+            File.WriteAllText(targetFile, result);
+        }
     }
 }
